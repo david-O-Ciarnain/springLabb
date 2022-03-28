@@ -1,7 +1,6 @@
 package com.example.inlammningprojekt.entity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 public class Album {

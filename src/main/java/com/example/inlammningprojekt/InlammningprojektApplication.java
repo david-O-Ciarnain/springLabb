@@ -1,20 +1,32 @@
 package com.example.inlammningprojekt;
 
+import com.example.inlammningprojekt.entity.Album;
+import com.example.inlammningprojekt.repository.AlbumRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class InlammningprojektApplication implements CommandLineRunner {
+public class InlammningprojektApplication  {
+
+    final
+    AlbumRepo albumRepo;
+
+    public InlammningprojektApplication(AlbumRepo albumRepo) {
+        this.albumRepo = albumRepo;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(InlammningprojektApplication.class, args);
     }
 
+@Bean
+    CommandLineRunner init(AlbumRepo albumRepo){
+        return args -> {
+            Album album = new Album("Batman","1914-05-12",60,"BatmanVSSuperman");
+            albumRepo.save(album);
+        };
+}
 
-    @Override
-    public void run(String... args) throws Exception {
-
-    }
 }
