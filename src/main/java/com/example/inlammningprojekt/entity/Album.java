@@ -21,11 +21,15 @@ public class Album {
     @Column(nullable = false)
     private String artistName;
 
-    public Album(String songName, String release, int songLength, String artistName) {
+    @Column
+    private String imageSource;
+
+    public Album(String songName, String release, int songLength, String artistName, String imageSource) {
         this.songName = songName;
         this.release = release;
         this.songLength = songLength;
         this.artistName = artistName;
+        this.imageSource = imageSource;
     }
 
     public Album() {
@@ -66,5 +70,13 @@ public class Album {
 
     public void setArtistName(String artistName) {
         this.artistName = artistName;
+    }
+
+    public String getImageSource() {
+        return imageSource;
+    }
+
+    public void setImageSource(String imageSource) {
+        this.imageSource = imageSource;
     }
 }

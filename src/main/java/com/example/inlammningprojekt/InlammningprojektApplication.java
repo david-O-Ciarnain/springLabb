@@ -24,8 +24,12 @@ public class InlammningprojektApplication  {
 @Bean
     CommandLineRunner init(AlbumRepo albumRepo){
         return args -> {
-            Album album = new Album("Batman","1914-05-12",60,"BatmanVSSuperman");
+            Album album = new Album("Batman","1914-05-12",60,"BatmanVSSuperman", "/Batman.jpeg");
+            Album album2 = new Album("Superman","1914-05-12",60,"SupermanVSBatman", "/superman.jpeg");
+            Album album3 = new Album("Catwoman","1904-05-12",540,"Catwoman<3Batman", "/catwoman.jpg");
             albumRepo.save(album);
+            albumRepo.save(album2);
+            albumRepo.save(album3);
         };
 }
 

@@ -11,7 +11,8 @@ public class DTOConverter {
                 dtoAlbumRequest.getSongName(),
                 dtoAlbumRequest.getArtistName(),
                 dtoAlbumRequest.getSongLength(),
-                dtoAlbumRequest.getRelease()
+                dtoAlbumRequest.getRelease(),
+                dtoAlbumRequest.getImageSource()
         );
     }
 
@@ -21,7 +22,8 @@ public class DTOConverter {
                 album.getSongName(),
                 album.getArtistName(),
                 album.getRelease(),
-                album.getSongLength()
+                album.getSongLength(),
+                album.getImageSource()
         );
     }
 

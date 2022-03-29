@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    font-family: "Century Gothic";
+}
+
+.header-title{
+    text-align: center;
+}
+
+.items-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.song-container{
+    margin: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.song-container h2 {
+    margin-bottom: 25px;
+}
+
+.song-container img {
+    object-fit: contain;
+    width: 80%;
+}
