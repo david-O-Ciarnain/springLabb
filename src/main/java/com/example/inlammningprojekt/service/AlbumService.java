@@ -21,7 +21,7 @@ public class AlbumService {
     }
 
     public Album getById(int id) {
-        return albumRepo.getById(id);
+        return albumRepo.findById(id).orElseThrow();
     }
 
     public Album post(Album album) {
