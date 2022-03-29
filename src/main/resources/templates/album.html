@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h1>Välkommen till samlingsalbumet!</h1>
+            <div th:each="album:${albumList}">
+                <h2 th:text="${album.getSongName()}"></h2>
+                <p th:text="${album.getArtistName()}"></p>
+                <p th:text="${album.getRelease()}"></p>
+                <p th:text="${album.getSongLength()}"></p>
+                <hr/>
+            </div>
+    </div>
+
+</body>
+</html>

@@ -3,11 +3,12 @@ package com.example.inlammningprojekt.controller;
 import com.example.inlammningprojekt.entity.Album;
 import com.example.inlammningprojekt.service.AlbumService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/album")
 public class AlbumController {
 
@@ -19,8 +20,10 @@ public class AlbumController {
     }
 
     @GetMapping
-    public List<Album> getAllStuff() {
-        return albumService.getAll();
+    public String getAllStuff(Model model) {
+        List<Album> albumList = albumService.getAll();
+        model.addAttribute("albumList", albumList);
+        return "album";
     }
 
     @GetMapping("/{id}")
