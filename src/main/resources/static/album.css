@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: lightgray;
 }
 
 .main-container{
@@ -10,16 +11,19 @@
 
 .header-title{
     text-align: center;
+    padding: 40px;
 }
 
 .items-container{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    row-gap: 25px;
+    width: 100%;
 }
 
 .song-container{
-    margin: 25px;
+    max-width: 30%;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -28,9 +32,15 @@
 
 .song-container h2 {
     margin-bottom: 25px;
+    text-align: center;
+}
+
+.song-container p {
+    margin-bottom: 3px;
 }
 
 .song-container img {
     object-fit: contain;
-    width: 80%;
+    border-radius: 50%;
+    margin-bottom: 25px;
 }
