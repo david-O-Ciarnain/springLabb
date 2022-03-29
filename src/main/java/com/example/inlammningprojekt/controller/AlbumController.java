@@ -1,5 +1,7 @@
 package com.example.inlammningprojekt.controller;
 
+import com.example.inlammningprojekt.dto.DTOAlbumResponse;
+import com.example.inlammningprojekt.dto.DTOConverter;
 import com.example.inlammningprojekt.entity.Album;
 import com.example.inlammningprojekt.service.AlbumService;
 import org.springframework.stereotype.Controller;
@@ -14,14 +16,19 @@ public class AlbumController {
 
     final
     AlbumService albumService;
+    DTOConverter dtoConverter;
 
-    public AlbumController(AlbumService albumService) {
+    public AlbumController(AlbumService albumService, DTOConverter dtoConverter) {
         this.albumService = albumService;
+        this.dtoConverter = dtoConverter;
     }
 
     @GetMapping
     public String getAllStuff(Model model) {
-        List<Album> albumList = albumService.getAll();
+        List<DTOAlbumResponse> albumList = albumService.getAll()
+                .stream()
+                .map(album -> dtoConverter.DTOEntityToAlbumResponse(album))
+                .toList();
         model.addAttribute("albumList", albumList);
         return "album";
     }
