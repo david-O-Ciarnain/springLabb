@@ -15,10 +15,16 @@
                 <p th:text="${album.getArtistName()}"></p>
                 <p th:text="${album.getRelease()}"></p>
                 <p th:text="${album.getSongLength()}"></p>
+                <button th:data-id="${album.getId()}" th:onclick="handleDelete(this.getAttribute('data-id'))">Delete</button>
                 <hr/>
+
             </div>
+            <br>
+            <a th:href="@{/album/addalbum}" > <button>Add new album!</button></a>
+
         </div>
     </div>
+<script type="text/javascript" th:src= "@{/album.js}"></script>
 
 </body>
 </html>

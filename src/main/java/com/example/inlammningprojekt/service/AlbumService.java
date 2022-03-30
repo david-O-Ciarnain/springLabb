@@ -57,4 +57,8 @@ public class AlbumService {
 
 
     }
+
+    public void save(Album album) {
+        return;
+    }
 }

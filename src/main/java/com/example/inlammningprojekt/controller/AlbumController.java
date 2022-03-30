@@ -4,6 +4,7 @@ import com.example.inlammningprojekt.dto.DTOAlbumResponse;
 import com.example.inlammningprojekt.dto.DTOConverter;
 import com.example.inlammningprojekt.entity.Album;
 import com.example.inlammningprojekt.service.AlbumService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -39,19 +40,30 @@ public class AlbumController {
     }
 
     @PostMapping
-    public Album post(@RequestBody Album album) {
-        return albumService.post(album);
+    public String post(@ModelAttribute Album album) {
+        albumService.save(album);
+        return "redirect:/album";
+    }
+
+    @GetMapping("/addalbum")
+    public String addAlbum() {
+        return "newAlbumForm";
     }
 
     @DeleteMapping("/{id}")
-    public void deleteStuff(@PathVariable("id") int id) {
-        albumService.deleteById(id);
-    }
+    public ResponseEntity<Void> deleteStuff(@PathVariable("id") int id) {
 
-    @PutMapping("/{id}")
+        albumService.deleteById(id);
+
+        return ResponseEntity.status(303).header("Location", "/blog").build();
+
+ /*   @PutMapping("/{id}")
     public Album update(@PathVariable("id") int id, @RequestBody Album album) {
 
         return albumService.updateById(id, album);
 
+
+  */
     }
+
 }
