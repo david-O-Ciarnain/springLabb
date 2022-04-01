@@ -3,7 +3,7 @@ package com.example.inlammningprojekt.entity;
 import javax.persistence.*;
 
 @Entity
-public class Album {
+public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Album {
     @Column
     private String imageSource;
 
-    public Album(String songName, String release, int songLength, String artistName, String imageSource) {
+    public Song(String songName, String release, int songLength, String artistName, String imageSource) {
         this.songName = songName;
         this.release = release;
         this.songLength = songLength;
@@ -32,7 +32,7 @@ public class Album {
         this.imageSource = imageSource;
     }
 
-    public Album() {
+    public Song() {
     }
 
     public int getId() {
