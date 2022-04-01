@@ -1,6 +1,6 @@
 package com.example.inlammningprojekt.dto;
 
-public class DTOAlbumResponse {
+public class DTOSongResponse {
 
     private String imageSource;
     private int id;
@@ -9,16 +9,16 @@ public class DTOAlbumResponse {
     private String release;
     private String songLength;
 
-    public DTOAlbumResponse(int id, String songName, String artistName, String release, int songLength, String imageSource) {
+    public DTOSongResponse(int id, String songName, String artistName, String release, int songLength, String imageSource) {
         this.id = id;
-        this.songName = "Låtnamn: " + songName;
-        this.artistName = "Artistnamn: " + artistName;
-        this.release = "Releasedatum: " + release;
-        this.songLength = "Låtlängd: " + songLength;
+        this.songName = "Song name: " + songName;
+        this.artistName = "Artist namn: " + artistName;
+        this.release = "Release date: " + release;
+        this.songLength = "Song length: " + songLength;
         this.imageSource = imageSource;
     }
 
-    public DTOAlbumResponse() {
+    public DTOSongResponse() {
 
     }
 

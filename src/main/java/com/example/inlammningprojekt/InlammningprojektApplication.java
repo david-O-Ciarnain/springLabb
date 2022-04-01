@@ -1,7 +1,7 @@
 package com.example.inlammningprojekt;
 
-import com.example.inlammningprojekt.entity.Album;
-import com.example.inlammningprojekt.repository.AlbumRepo;
+import com.example.inlammningprojekt.entity.Song;
+import com.example.inlammningprojekt.repository.SongRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Bean;
 public class InlammningprojektApplication  {
 
     final
-    AlbumRepo albumRepo;
+    SongRepo songRepo;
 
-    public InlammningprojektApplication(AlbumRepo albumRepo) {
-        this.albumRepo = albumRepo;
+    public InlammningprojektApplication(SongRepo songRepo) {
+        this.songRepo = songRepo;
     }
 
     public static void main(String[] args) {
@@ -22,14 +22,14 @@ public class InlammningprojektApplication  {
     }
 
 @Bean
-    CommandLineRunner init(AlbumRepo albumRepo){
+    CommandLineRunner init(SongRepo songRepo){
         return args -> {
-            Album album = new Album("Batman","1914-05-12",60,"BatmanVSSuperman", "/Batman.jpeg");
-            Album album2 = new Album("Superman","1914-05-12",60,"SupermanVSBatman", "/superman.jpeg");
-            Album album3 = new Album("Catwoman","1904-05-12",540,"Catwoman<3Batman", "/catwoman.jpg");
-            albumRepo.save(album);
-            albumRepo.save(album2);
-            albumRepo.save(album3);
+            Song song = new Song("Batman","1914-05-12",60,"BatmanVSSuperman", "/Batman.jpeg");
+            Song song2 = new Song("Superman","1914-05-12",60,"SupermanVSBatman", "/superman.jpeg");
+            Song song3 = new Song("Catwoman","1904-05-12",540,"Catwoman<3Batman", "/catwoman.jpg");
+            songRepo.save(song);
+            songRepo.save(song2);
+            songRepo.save(song3);
         };
 }
 

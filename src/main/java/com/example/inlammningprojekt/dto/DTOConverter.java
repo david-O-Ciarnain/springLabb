@@ -1,29 +1,29 @@
 package com.example.inlammningprojekt.dto;
 
-import com.example.inlammningprojekt.entity.Album;
+import com.example.inlammningprojekt.entity.Song;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DTOConverter {
 
-    public Album albumRequestDTOToEntity(DTOAlbumRequest dtoAlbumRequest) {
-        return new Album(
-                dtoAlbumRequest.getSongName(),
-                dtoAlbumRequest.getArtistName(),
-                dtoAlbumRequest.getSongLength(),
-                dtoAlbumRequest.getRelease(),
-                dtoAlbumRequest.getImageSource()
+    public Song songRequestDTOToEntity(DTOSongRequest dtoSongRequest) {
+        return new Song(
+                dtoSongRequest.getSongName(),
+                dtoSongRequest.getArtistName(),
+                dtoSongRequest.getSongLength(),
+                dtoSongRequest.getRelease(),
+                dtoSongRequest.getImageSource()
         );
     }
 
-    public DTOAlbumResponse DTOEntityToAlbumResponse(Album album) {
-        return new DTOAlbumResponse(
-                album.getId(),
-                album.getSongName(),
-                album.getArtistName(),
-                album.getRelease(),
-                album.getSongLength(),
-                album.getImageSource()
+    public DTOSongResponse DTOEntityToSongResponse(Song song) {
+        return new DTOSongResponse(
+                song.getId(),
+                song.getSongName(),
+                song.getArtistName(),
+                song.getRelease(),
+                song.getSongLength(),
+                song.getImageSource()
         );
     }
 

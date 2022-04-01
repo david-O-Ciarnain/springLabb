@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/song.css}">
+    <title>Title</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="post-container">
+            <h1 class="header-title">Välkommen Till Samlingsalbumet!</h1>
+            <div class="items-container">
+                <div class="song-container" th:each="song:${songList}">
+                    <h2 th:text="${song.getSongName()}"></h2>
+                    <img th:src="${song.getImageSource()}" alt="Batman image"/>
+                    <p th:text="${song.getArtistName()}"></p>
+                    <p th:text="${song.getRelease()}"></p>
+                    <p th:text="${song.getSongLength()}"></p>
+                    <button th:data-id="${song.getId()}" th:onclick="handleDelete(this.getAttribute('data-id'))">Delete</button>
+                </div>
+            </div>
+
+        </div>
+        <a th:href="@{/song/addsong}" class="new-post-button"><button>Add new song!</button></a>
+    </div>
+<script type="text/javascript" th:src= "@{/song.js}"></script>
+
+</body>
+</html>

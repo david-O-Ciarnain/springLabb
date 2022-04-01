@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lightgray;
+    font-family: "Century Gothic", serif;
+}
+
+.main-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.post-container {
+    width: 80%;
+}
+
+.post-container button {
+    background-color: pink;
+    font-weight: bolder;
+    color: #000777;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+.post-container button:hover {
+    background-color: #ff2b90;
+    cursor: pointer;
+}
+
+.header-title{
+    text-align: center;
+    padding: 40px;
+}
+
+.items-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    row-gap: 25px;
+    width: 100%;
+}
+
+.song-container{
+    max-width: 30%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.song-container h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.song-container p {
+    margin-bottom: 3px;
+}
+
+.song-container img {
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.new-post-button {
+    background-color: #ff0032;
+    font-weight: bolder;
+    padding: 20px 70px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+.new-post-button button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0%);
+    color: #67ff00;
+    font-size: 50px;
+}
+
+.new-post-button:hover {
+    background-color: #002aff;
+    cursor: pointer;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+}
+
+.content-container {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    align-items: start;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+#save-button {
+    background-color: pink;
+    font-weight: bolder;
+    color: #000777;
+    padding: 10px;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 10px;
+}
+
+#save-button:hover {
+    background-color: #ff2b90;
+    cursor: pointer;
+}
+
+.content-container input {
+    padding: 5px;
+    border: none;
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+
+.newform-img {
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;
+    height: 387px;
+}
+
+.cancel-post-button button{
+    background-color: pink;
+    font-weight: bolder;
+    color: #000777;
+    padding: 10px;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 10px;
+}
+
+.cancel-post-button button:hover {
+    background-color: #ff2b90;
+    cursor: pointer;
+}
+
+.button-order {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 20px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/song.css}">
+</head>
+<body>
+<div class ="main-container">
+    <h1 class="header-title">Add New Song!</h1>
+    <div class="content-container">
+        <form method="post" th:action="@{/song}" class="form-container">
+            <label for="songname">Enter Songname:</label>
+            <input type="text" id="songname" name="songName" placeholder="Songname..">
+            <label for="artistname">Enter Artistname:</label>
+            <input type="text" id="artistname" name="artistName" placeholder="Artistname..">
+            <label for="songlen">Enter length of song:</label>
+            <input type="number" id="songlen" name="songLength" placeholder="Songlength..">
+            <label for="release">Enter release date:</label>
+            <input type="text" id="release" name="release" placeholder="Release..">
+            <label for="imgsrc">Enter image source location:</label>
+            <input type="text" id="imgsrc" name="imageSource" placeholder="Image source..">
+            <div class="button-order">
+                <input type="submit" value="Save" id="save-button">
+                <a th:href="@{/song}" class="cancel-post-button"><button formmethod="get">Cancel</button></a>
+            </div>
+        </form>
+        <img th:src="@{/stuff.jpg}" alt="form-image" class="newform-img"/>
+    </div>
+</div>
+</body>
+</html>

@@ -1,14 +1,14 @@
 package com.example.inlammningprojekt.dto;
 
-public class DTOAlbumRequest {
+public class DTOSongRequest {
 
-    private String imageSource;
-    private String songName;
-    private String artistName;
-    private String release;
-    private int songLength;
+    private final String imageSource;
+    private final String songName;
+    private final String artistName;
+    private final String release;
+    private final String songLength;
 
-    public DTOAlbumRequest(String songName, String artistName, String release, int songLength, String imageSource) {
+    public DTOSongRequest(String songName, String artistName, String release, String songLength, String imageSource) {
         this.songName = songName;
         this.artistName = artistName;
         this.release = release;
@@ -29,7 +29,7 @@ public class DTOAlbumRequest {
     }
 
     public int getSongLength() {
-        return songLength;
+        return Integer.parseInt(songLength);
     }
 
     public String getImageSource() {return imageSource;}
