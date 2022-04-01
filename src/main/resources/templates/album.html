@@ -6,24 +6,24 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="main-container">
-        <h1 class="header-title">Välkommen till samlingsalbumet!</h1>
-        <div class="items-container">
-            <div class="song-container" th:each="album:${albumList}">
-                <h2 th:text="${album.getSongName()}"></h2>
-                <img th:src="${album.getImageSource()}" alt="Batman image"/>
-                <p th:text="${album.getArtistName()}"></p>
-                <p th:text="${album.getRelease()}"></p>
-                <p th:text="${album.getSongLength()}"></p>
-                <button th:data-id="${album.getId()}" th:onclick="handleDelete(this.getAttribute('data-id'))">Delete</button>
-                <hr/>
-
-            </div>
-            <br>
-            <a th:href="@{/album/addalbum}" > <button>Add new album!</button></a>
+<div class="main-container">
+    <h1 class="header-title">Välkommen till samlingsalbumet!</h1>
+    <div class="items-container">
+        <div class="song-container" th:each="album:${albumList}">
+            <h2 th:text="${album.getSongName()}"></h2>
+            <img th:src="${album.getImageSource()}" alt="Batman image"/>
+            <p th:text="${album.getArtistName()}"></p>
+            <p th:text="${album.getRelease()}"></p>
+            <p th:text="${album.getSongLength()}"></p>
+            <button th:data-id="${album.getId()}" th:onclick="handleDelete(this.getAttribute('data-id'))">Delete</button>
+            <hr/>
 
         </div>
+        <br>
+        <a th:href="@{/album/addalbum}" > <button>Add new album!</button></a>
+
     </div>
+</div>
 <script type="text/javascript" th:src= "@{/album.js}"></script>
 
 </body>

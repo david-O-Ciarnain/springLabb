@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @Controller
 @RequestMapping("/album")
 public class AlbumController {
@@ -41,7 +40,7 @@ public class AlbumController {
 
     @PostMapping
     public String post(@ModelAttribute Album album) {
-        albumService.save(album);
+        albumService.post(album);
         return "redirect:/album";
     }
 
@@ -55,14 +54,11 @@ public class AlbumController {
 
         albumService.deleteById(id);
 
-        return ResponseEntity.status(303).header("Location", "/blog").build();
+        return ResponseEntity.status(303).header("Location", "/album").build();
 
  /*   @PutMapping("/{id}")
     public Album update(@PathVariable("id") int id, @RequestBody Album album) {
-
         return albumService.updateById(id, album);
-
-
   */
     }
 

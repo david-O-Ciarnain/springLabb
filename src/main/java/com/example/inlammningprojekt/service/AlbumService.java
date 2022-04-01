@@ -32,7 +32,7 @@ public class AlbumService {
          albumRepo.deleteById(id);
     }
 
-    public Album updateById(int id, Album album) {
+  /*  public Album updateById(int id, Album album) {
 
         Album exAlbum = albumRepo.findById(id).orElseThrow();
 
@@ -57,8 +57,7 @@ public class AlbumService {
 
 
     }
+*/
 
-    public void save(Album album) {
-        return;
     }
-}
+

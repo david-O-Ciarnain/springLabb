@@ -11,10 +11,14 @@
     <h1>Add new album!</h1>
 
     <form method="post" th:action="@{/album}" class="title">
-        <input type="text" name="title" placeholder="Title...">
+        <input type="text" name="songName" placeholder="Song name">
+        <input type="text" name="artistName" placeholder="Artist name">
+        <input type="int" name="songLength" placeholder="Song length">
+        <input type="Date" name="release" placeholder="Release date">
+        <input type="Image" name="imageSource" placeholder="Image Source">
+
         <br><br>
-        <textarea name="message" placeholder="Message...."></textarea>
-        <br><br>
+
         <input type="submit" value="Save">
     </form>
 
