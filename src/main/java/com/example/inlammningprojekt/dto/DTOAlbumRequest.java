@@ -6,9 +6,9 @@ public class DTOAlbumRequest {
     private String songName;
     private String artistName;
     private String release;
-    private int songLength;
+    private String songLength;
 
-    public DTOAlbumRequest(String songName, String artistName, String release, int songLength, String imageSource) {
+    public DTOAlbumRequest(String songName, String artistName, String release, String songLength, String imageSource) {
         this.songName = songName;
         this.artistName = artistName;
         this.release = release;
@@ -29,7 +29,7 @@ public class DTOAlbumRequest {
     }
 
     public int getSongLength() {
-        return songLength;
+        return Integer.parseInt(songLength);
     }
 
     public String getImageSource() {return imageSource;}

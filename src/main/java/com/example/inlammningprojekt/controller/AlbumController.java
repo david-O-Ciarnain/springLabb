@@ -1,5 +1,6 @@
 package com.example.inlammningprojekt.controller;
 
+import com.example.inlammningprojekt.dto.DTOAlbumRequest;
 import com.example.inlammningprojekt.dto.DTOAlbumResponse;
 import com.example.inlammningprojekt.dto.DTOConverter;
 import com.example.inlammningprojekt.entity.Album;
@@ -40,8 +41,9 @@ public class AlbumController {
     }
 
     @PostMapping
-    public String post(@ModelAttribute Album album) {
-        albumService.save(album);
+    public String post(@ModelAttribute DTOAlbumRequest dtoAlbumRequest) {
+        Album incomingAlbum = dtoConverter.albumRequestDTOToEntity(dtoAlbumRequest);
+        albumService.post(incomingAlbum);
         return "redirect:/album";
     }
 
@@ -55,7 +57,7 @@ public class AlbumController {
 
         albumService.deleteById(id);
 
-        return ResponseEntity.status(303).header("Location", "/blog").build();
+        return ResponseEntity.status(303).header("Location", "/album").build();
 
  /*   @PutMapping("/{id}")
     public Album update(@PathVariable("id") int id, @RequestBody Album album) {

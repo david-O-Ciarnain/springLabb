@@ -3,10 +3,34 @@
     padding: 0;
     box-sizing: border-box;
     background-color: lightgray;
+    font-family: "Century Gothic", serif;
 }
 
 .main-container{
-    font-family: "Century Gothic";
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.post-container {
+    width: 80%;
+}
+
+.post-container button {
+    background-color: pink;
+    font-weight: bolder;
+    color: #000777;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+.post-container button:hover {
+    background-color: #ff2b90;
+    cursor: pointer;
 }
 
 .header-title{
@@ -45,12 +69,32 @@
     margin-bottom: 25px;
 }
 
+.new-post-button {
+    background-color: #ff0032;
+    font-weight: bolder;
+    padding: 20px 70px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+.new-post-button button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0%);
+    color: #67ff00;
+    font-size: 50px;
+}
+
+.new-post-button:hover {
+    background-color: #002aff;
+    cursor: pointer;
+}
 
 .container{
     width: 65%;
     margin: 0 auto;
 }
-
 
 .title{
     text-align: center;
